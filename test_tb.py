@@ -1,3 +1,5 @@
+import torch
+import torchvision
 from torch.utils.tensorboard import SummaryWriter
 
 
@@ -15,8 +17,8 @@ if __name__ == '__main__':
     # Example 2
     import numpy as np
     from PIL import Image
-    img = Image.open("data/p1.png")
-    img = np.array(img)
-    writer.add_image("test", img, 1, dataformats='HWC')
+    dataset = torchvision.datasets.CIFAR10("data/images", transform=torchvision.transforms.ToTensor())
+    image, label = dataset[0]
+    writer.add_image("test", image, 1)
     # writer.add_scalar()
     writer.close()
