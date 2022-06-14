@@ -3,8 +3,6 @@ import torch.nn as nn
 from torch.nn import Parameter
 
 
-
-
 class DummyModel(nn.Module):
 
     def __init__(self) -> None:
@@ -24,3 +22,4 @@ if __name__ == '__main__':
     print(dm.eval())
     x = torch.tensor([1.0, 2.0])
     print(dm(x))
+    torch.save(dm, '../../pretrained_models/dummy_model.pth')
