@@ -15,3 +15,5 @@ register your model
 ```commandline
 curl -X POST "http://localhost:8081/models?url=dm1.mar"
 ```
+
+https://markdowner.net/article/238437127418474496
