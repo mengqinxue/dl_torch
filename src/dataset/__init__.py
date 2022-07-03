@@ -1,1 +1,1 @@
-from src.dataset.simple_dataset import SimpleDataset
+from dataset.simple_dataset import SimpleDataset

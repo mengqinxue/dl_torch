@@ -1,11 +1,12 @@
+import torch
 from torch.utils.data import Dataset
 
 
 class SimpleDataset(Dataset):
 
     def __init__(self, data, label):
-        self.data = data
-        self.label = label
+        self.data, self.label = torch.from_numpy(data), torch.from_numpy(label)
+        self.data, self.label = self.data.type(torch.FloatTensor), self.label.type(torch.FloatTensor)
 
     def __getitem__(self, idx):
         return self.data[idx], self.label[idx]
